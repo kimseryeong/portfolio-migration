@@ -1,17 +1,118 @@
 [
     {
-        "title": "test 1"
-        , "type": "solo"
-        , "description": "this is a test data"
+        "title": "일정관리 웹 애플리케이션",
+        "sub": "자신의 일정을 캘린더에 추가, 수정, 삭제하여 관리할 수 있는 웹 TodoList",
+        "imgs": ["/img/todolist.png"],
+        "type": "Solo",
+        "startDate": "24.05.04",
+        "endDate": "24.06.28",
+        "roles": ["full-stack"],
+        "features": [
+            "Supabase 오픈소스를 사용하여 서버 관리"
+            ,"구글 Auth API - 소셜 로그인 기능 구현"
+            ,"FullCalendar 라이브러리 활용"
+            ,"Netlify를 활용하여 배포"
+        ],
+        "skill": [
+            "Javascript"
+            ,"React.js"
+            ,"Netlify"
+            ,"Supabase"
+        ],
+        "desc": "자신의 일정을 캘린더에 추가, 수정, 삭제하여 관리할 수 있는 웹 TodoList",
+        "git": "https://github.com/ITsMyPlan/ITsMyPlan_ToDoList_Seryeong"
     }
     ,{
-        "title": "test 2"
-        , "type": "solo"
-        , "description": "this is a test data"
+        "title": "포트폴리오 웹사이트",
+        "sub": "개발자로서 skill, project, career를 한눈에 확인할 수 있는 포트폴리오 웹 사이트",
+        "imgs": [
+            "/img/portfolio.png",
+            "/img/portfolio2.png"
+        ],
+        "type": "Solo",
+        "startDate": "24.01.04",
+        "endDate": "25.03.08",
+        "roles": ["full-stack"],
+        "features": [
+            "Git pages를 통한 배포 "
+            ,"Swiper.js 라이브러리를 사용하여 슬라이드 기능 구현"
+        ],
+        "skill": [
+            "Javascript"
+            ,"HTML/CSS"
+            ,"Git Pages"
+        ],
+        "desc": "포트폴리오를 확장성 있게 관리할 수 있도록 웹사이트 생성",
+        "git": "https://github.com/kimseryeong/seryeong_portfolio"
     }
     ,{
-        "title": "test 3"
-        , "type": "solo"
-        , "description": "this is a test data"
+        "title": "외국인 대상 AI 기반의 레시피 추천 웹서비스",
+        "sub": "Yolov7과 OCR 기반 식재료 이미지 및 영수증 분석을 활용한 외국인 대상 레시피 추천 서비스",
+        "imgs": [
+            "/img/insertIngredient.png"
+            , "/img/insertIngredient2.png"
+        ],
+        "type": "Team (5인)",
+        "startDate": "22.09.05",
+        "endDate": "22.10.19",
+        "roles": ["Back-end"],
+        "features": [
+            "DB 설계 및 구축, 관리"
+            ,"flask 서버와 springboot 서버를 연동하여 식재료 이미지 및 영수증 업로드 기능 구현"
+            ,"레시피 상세 페이지 기능 구현"
+            ,"마이페이지의 찜 기능 구현"
+        ],
+        "skill": [
+            "Java"
+            ,"Spring Boot"
+            ,"MySql"
+        ],
+        "desc": "한식의 세계화로 Yolov7과 OCR 기반 식재료 이미지 및 영수증 분석을 활용한 외국인 대상 레시피 추천 서비스",
+        "git": ""
+    }
+    ,{
+        "title": "개인 맞춤형 운동 추천 웹서비스",
+        "sub": "설문조사 기반의 개인 맞춤형 운동 추천 서비스",
+        "imgs": ["/img/ingredient.mp4"],
+        "type": "Team (5인)",
+        "startDate": "22.07.06",
+        "endDate": "22.08.21",
+        "roles": [
+            "Front-end"
+            , "UI Design"
+        ],
+        "features": [
+            "웹 페이지 전체 화면 설계 및 퍼블리싱"
+            ,"설문조사 슬라이드 구현"
+        ],
+        "skill": [
+            "Javascript"
+            ,"HTML/CSS"
+            ,"Bootstrap"
+        ],
+        "desc": "사용자 설문 기반의 맞춤형 운동 추천 서비스로써 설문결과에 따라 운동 유튜브, 체육관, 트레이너 정보가 조회되고 맞춤 루틴 캘린더를 제공받는 서비스",
+        "git": "https://github.com//2022-SMHRD-KDT-BIgData-14/BBJ"
+    }
+    ,{
+        "title": "UI/UX 기반의 키오스크 사용성 개선",
+        "sub": "패스트푸드점의 키오스크 사용자를 대상으로 UI/UX 개선을 통한 주문 프로세스 단축",
+        "imgs": [""],
+        "type": "Team (5인)",
+        "startDate": "21.03.05",
+        "endDate": "22.10.16",
+        "roles": [
+            "Data Analysis"
+            , "UI Design"
+        ],
+        "features": [
+            "실제 패스트푸드점의 키오스크 이용자를 대상으로 주문 영상 데이터 수집"
+            ,"Minitab을 통해 수집한 데이터 통계 분석"
+            ,"키오스크 화면 UI 개선안 프로토타입 생성 및 검증실험"
+        ],
+        "skill": [
+            "Minitab"
+        ],
+        "desc": "키오스크 이용 디지털 디바이드 현상 완화를 위해 패스트푸드점의 실사용자 대상 주문 데이터 수집, 분석 후 일부 화면 UI를 개선, 주문 프로세스를 단축",
+        "git": ""
     }
 ]

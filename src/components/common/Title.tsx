@@ -11,12 +11,14 @@ const StyledTitle  = styled.div`
 `;
 
 const StyledText = styled.span`
-    font-size: 25px;
+    font-size: ${({ theme }) => theme.fontSizes.xl};
     font-weight: 700;
     display: inline-block;
+    
+    @media(max-width: 480px){
+        font-size: ${({ theme }) => theme.fontSizes.lg};
+    }
 `;
-
-
 
 export const Title:React.FC<TitleProps> = ({ text }) => {
     return (
