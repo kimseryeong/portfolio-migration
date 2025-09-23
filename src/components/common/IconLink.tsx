@@ -9,6 +9,11 @@ type IconProps = {
 
 const IconContatiner = styled.a`
     padding-left: 20px;
+
+    .logo:hover{
+        fill: ${({theme}) => theme.colors.primary};
+        cursor: pointer;
+      }
 `;
 
 export const IconLink:React.FC<IconProps> = ({ href, src }) => {
