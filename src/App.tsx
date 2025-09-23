@@ -17,10 +17,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  .logo:hover{
-    fill: hsl(139deg 35.21% 61.95%);
-    cursor: pointer;
-  }
+  
 `;
 
 function App() {
