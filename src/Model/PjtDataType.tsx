@@ -9,5 +9,5 @@ export type ProjectProps = {
     features: string[];
     skills: string[];
     desc: string;
-    git: string;
+    git: string[];
 }

@@ -1,0 +1,126 @@
+[
+    {
+        "title": "Schedule Management Web Application",
+        "sub": "A calendar based TodoList Web that allows user to add, edit, and delete their personal schedules",
+        "imgs": ["/img/todolist.png"],
+        "type": "Solo",
+        "startDate": "24.05.04",
+        "endDate": "25.05.14",
+        "roles": ["full-stack"],
+        "features": [
+            "Implemented Google social login using Google OAuth API"
+            ,"Utilized FullCalendar library for schdule-based UI"
+            ,"In 2025, migrated backend to Springboot and implemented RESTful APIs"
+            ,"Replaced Supabase Auth with server-side Google OAuth using Spring Security"
+        ],
+        "skill": [
+            "TypeScript"
+            ,"React.js"
+            ,"Spring Boot"
+            ,"Spring Security"
+            ,"Google OAuth"
+            ,"FullCalendar"
+            ,"Netlify"
+            ,"Railway"
+            ,"Supabase (initial version)"
+        ],
+        "desc": "A web-based ToDo List for managing personal schedules with calendar",
+        "git": [
+            "https://github.com/kimseryeong/PlanMyTodos",
+            "https://github.com/kimseryeong/PlanMyTodos-API"
+        ]
+    }
+    ,{
+        "title": "Personal Web Portfolio",
+        "sub": "A portfolio website showcasing skills, projects, and career at a glance",
+        "imgs": [
+            "/img/portfolio.png",
+            "/img/portfolio2.png"
+        ],
+        "type": "Solo",
+        "startDate": "24.01.04",
+        "endDate": "25.03.08",
+        "roles": ["Full-stack"],
+        "features": [
+            "Deployed via Git Pages",
+            "Implemented slide feature using Swiper.js"
+        ],
+        "skill": [
+            "Javascript"
+            ,"HTML/CSS"
+            ,"Git Pages"
+        ],
+        "desc": "Built a scalable portfolio management website",
+        "git": ["https://github.com/kimseryeong/seryeong_portfolio"]
+    }
+    ,{
+        "title": "AI-based Recipe Recommendation Service for Foreigners",
+        "sub": "Recipe recommendation using Yolov7 and OCR-based ingredient and receipt analysis",
+        "imgs": [
+            "/img/insertIngredient.png"
+            , "/img/insertIngredient2.png"
+        ],
+        "type": "Team (5)",
+        "startDate": "22.09.05",
+        "endDate": "22.10.19",
+        "roles": ["Back-end"],
+        "features": [
+            "Designed, built, and managed database",
+            "Integrated Flask and Spring Boot servers for ingredient/receipt uploads",
+            "Implemented recipe detail page",
+            "Developed favorites feature in My Page"
+        ],
+        "skill": [
+            "Java"
+            ,"Spring Boot"
+            ,"MySql"
+        ],
+        "desc": "Global recipe recommendation service for foreigners using image and receipt analysis",
+        "git": []
+    }
+    ,{
+        "title": "Personalized Workout Recommendation Service",
+        "sub": "Survey-based personalized workout recommendation platform",
+        "imgs": ["/img/ingredient.mp4"],
+        "type": "Team (5)",
+        "startDate": "22.07.06",
+        "endDate": "22.08.21",
+        "roles": [
+            "Front-end"
+            , "UI Design"
+        ],
+        "features": [
+            "Designed and published full website UI",
+            "Implemented survey slides"
+        ],
+        "skill": [
+            "Javascript"
+            ,"HTML/CSS"
+            ,"Bootstrap"
+        ],
+        "desc": "Provides YouTube workouts, gyms, trainers, and custom routine calendars based on survey results",
+        "git": ["https://github.com//2022-SMHRD-KDT-BIgData-14/BBJ"]
+    }
+    ,{
+        "title": "Kiosk UI/UX Improvement",
+        "sub": "Enhanced kiosk usability for fast-food restaurants by shortening the ordering process",
+        "imgs": [""],
+        "type": "Team (5)",
+        "startDate": "21.03.05",
+        "endDate": "22.10.16",
+        "roles": [
+            "Data Analysis"
+            , "UI Design"
+        ],
+        "features": [
+            "Collected real-world kiosk ordering video data",
+            "Performed statistical analysis with Minitab",
+            "Created and tested prototype UI improvements"
+        ],
+        "skill": [
+            "Minitab"
+        ],
+        "desc": "Reduced digital divide in kiosk use by analyzing user data and improving UI for faster ordering",
+        "git": []
+    }
+]
