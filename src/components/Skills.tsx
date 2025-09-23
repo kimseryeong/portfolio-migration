@@ -23,7 +23,7 @@ display: flex;
 export const Skills: React.FC = () => {
     return (
         <SkillContainer>
-            <Title text={ "🔑 Skilles" }/>
+            <Title text={ "🔑 Skills" }/>
             <StackIcon name="java" />
             <StackIcon name="js" />
             <StackIcon name="react" />
