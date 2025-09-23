@@ -66,7 +66,7 @@
         "roles": ["Back-end"],
         "features": [
             "Designed, built, and managed database",
-            "Integrated Flask and Spring Boot servers for ingredient/receipt uploads",
+            "Integrated Flask and Spring Boot servers for ingredient & receipt uploads",
             "Implemented recipe detail page",
             "Developed favorites feature in My Page"
         ],
