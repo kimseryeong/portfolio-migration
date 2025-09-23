@@ -49,8 +49,9 @@ export const ProjectsSlider: React.FC = () => {
 
     return (
       <Slider {...settings}>
-        { projects.map((pjt) => (
+        { projects.map((pjt, idx) => (
           <SlideItem 
+            key={pjt.title || idx}
             title={pjt.title} 
             sub={pjt.sub} 
             imgs={pjt.imgs} 
