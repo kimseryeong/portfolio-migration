@@ -1,7 +1,7 @@
 export const theme = {
     colors: {
-      primary: "hsla(139, 70%, 75%, 1)",
-      secondary: "hsla(63, 90%, 76%, 1)",
+      primary: "hsla(48, 78%, 82%, 1)", //hsla(48, 78%, 82%, 1)   hsla(139, 70%, 75%, 1)
+      secondary: "hsl(208.37deg 63.53% 66.06%)", //hsla(340, 87%, 63%, 1)   hsla(63, 90%, 76%, 1)
       text: "#333",
       background: "#f5f5f5",
     },
