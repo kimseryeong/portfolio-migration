@@ -37,7 +37,7 @@ export const ProjectsSlider: React.FC = () => {
     const [isFetched, setIsFetched] = useState(false);
 
     useEffect(() => {
-      fetch("/data/projects.json")
+      fetch("/data/projects_en.json")
         .then((response) => response.json())
         .then((data) => {
           setProjects(data);
