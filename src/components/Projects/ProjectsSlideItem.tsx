@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { ProjectProps } from "../../Model/PjtDataType";
 import { IconLink } from "../common/IconLink";
@@ -24,7 +24,8 @@ const SlideTitle = styled.span`
     margin: 10px 0;
     font-size: ${({ theme }) => theme.fontSizes.lg};
     font-weight: 500;
-    box-shadow: ${({ theme }) => theme.colors.secondary} 0px -11px inset;
+    line-height: normal;
+    box-shadow: ${({ theme }) => theme.colors.primary} 0px -11px inset;
     
     @media (max-width: 430px){
         font-size: ${({ theme }) => theme.fontSizes.md};
@@ -62,19 +63,6 @@ const Desc = styled.p`
     }
 `;
 
-const FeaturesList = styled.ul`
-    line-height: 1.6;
-    padding: 0;
-    margin: 10px;
-    text-align: left;
-    list-style: none;
-    height: 23%;
-    font-size: ${({ theme }) => theme.fontSizes.md};
-
-    @media (max-width: 430px){
-        font-size: ${({ theme }) => theme.fontSizes.xs};
-    }
-`;
 
 const FeatItem = styled.div`
     display: flex;
@@ -105,6 +93,10 @@ const RoleItem = styled.span`
     margin-left: 5px;
 `;
 
+const GitLink = styled.div`
+    display: flex;
+`;
+
 const Bottoms = styled.div`
     display: flex;
     font-size: ${({ theme }) => theme.fontSizes.xs};
@@ -121,7 +113,44 @@ const Dates = styled.div`
     margin-left:auto;
 `;
 
+
+const FeaturesList = styled.ul`
+    line-height: 1.6;
+    padding: 0;
+    margin: 10px;
+    
+    list-style: none;
+    height: 23%;
+    font-size: ${({ theme }) => theme.fontSizes.md};
+
+    @media (max-width: 430px){
+        font-size: ${({ theme }) => theme.fontSizes.xs};
+    }
+`;
+
+const FeaturesDiv = styled.div`
+    text-align: left;
+`;
+
+const FeaturesButton = styled.button`
+    padding-left: 30px;
+    background-color: transparent;
+    border: transparent;
+    text-align: left;
+    font-weight: 700;
+    
+    &:hover{
+        cursor: pointer;
+        color: ${({theme}) => theme.colors.secondary};
+
+    }
+`;
+
 export const SlideItem:React.FC<ProjectProps> = ( {title, sub, imgs, type, startDate, endDate, roles, features, skills, desc, git} ) => {
+    const [showAll, setShowAll] = useState(false);
+    
+    const displayedFeatures = showAll ? features : features.slice(0, 4);
+
     return (
         <ProjectContainer>
             <SlideTitle>{ title }</SlideTitle>
@@ -129,13 +158,24 @@ export const SlideItem:React.FC<ProjectProps> = ( {title, sub, imgs, type, start
             <ImgDiv>
                 <ImgSlider imgs={imgs}/>
             </ImgDiv>
-            <FeaturesList>
-                { features.map((feat) => 
-                    feat ? (
-                        <FeatItem><span>✔️ </span><li>{ feat }</li></FeatItem>
-                    ) : null
-                )}    
-            </FeaturesList>
+            <FeaturesDiv>
+                <FeaturesList>
+                    { displayedFeatures.map( (feat, index) => 
+                        feat ? (
+                            <FeatItem>
+                                <span>✔️ </span>
+                                <li>{ feat }</li>
+                            </FeatItem>
+                        ) : null
+                    )}    
+                </FeaturesList>
+
+                {features.length > 5 && (
+                    <FeaturesButton onClick={() => setShowAll(!showAll)}>
+                    {showAll ? '▲' : `+ ${features.length - 5} more`}
+                    </FeaturesButton>
+                )}
+            </FeaturesDiv>
             <Bottoms>
                 <Roles>
                     👩🏻‍💻 { roles.map((role) =>
@@ -144,10 +184,13 @@ export const SlideItem:React.FC<ProjectProps> = ( {title, sub, imgs, type, start
                         ) : null
                     )}
                 </Roles>
-                { git ?
-                    <IconLink href={ git } src="/img/github-logo.svg"></IconLink>
-                    : null
-                }
+                <GitLink>
+                { git.map( url => 
+                    url ? (
+                    <IconLink href={ url } src="/img/github-logo.svg"></IconLink>
+                    ) : null
+                )}
+                </GitLink>
             </Bottoms>
             <Bottoms>
                 <Types>{ type }</Types>
