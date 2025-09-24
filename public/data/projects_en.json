@@ -6,11 +6,11 @@
         "type": "Solo",
         "startDate": "24.05.04",
         "endDate": "25.05.14",
-        "roles": ["full-stack"],
+        "roles": ["Full-stack"],
         "features": [
             "Implemented Google social login using Google OAuth API"
             ,"Utilized FullCalendar library for schdule-based UI"
-            ,"In 2025, migrated backend to Springboot and implemented RESTful APIs"
+            ,"Migrated backend to Springboot and implemented RESTful APIs"
             ,"Replaced Supabase Auth with server-side Google OAuth using Spring Security"
         ],
         "skill": [
@@ -81,7 +81,7 @@
     ,{
         "title": "Personalized Workout Recommendation Service",
         "sub": "Survey-based personalized workout recommendation platform",
-        "imgs": ["/img/ingredient.mp4"],
+        "imgs": [""],
         "type": "Team (5)",
         "startDate": "22.07.06",
         "endDate": "22.08.21",
