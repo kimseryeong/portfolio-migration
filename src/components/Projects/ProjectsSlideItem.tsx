@@ -55,11 +55,11 @@ const ImgDiv = styled.div`
     
 const Desc = styled.p`
     height: 7%;
-    font-size: ${({ theme }) => theme.fontSizes.sm};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
     
     @media (max-width: 430px){
         height: 10%;
-        font-size: ${({ theme }) => theme.fontSizes.xs};
+        font-size: ${({ theme }) => theme.fontSizes.xxs};
     }
 `;
 
@@ -121,10 +121,10 @@ const FeaturesList = styled.ul`
     
     list-style: none;
     height: 23%;
-    font-size: ${({ theme }) => theme.fontSizes.md};
+    font-size: ${({ theme }) => theme.fontSizes.sm};
 
     @media (max-width: 430px){
-        font-size: ${({ theme }) => theme.fontSizes.xs};
+        font-size: ${({ theme }) => theme.fontSizes.xxs};
     }
 `;
 
