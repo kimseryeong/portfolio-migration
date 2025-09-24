@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { ProjectProps } from "../../Model/PjtDataType";
 import { IconLink } from "../common/IconLink";
 import { ImgSlider } from "./ImgSlier";
 
 const ProjectContainer = styled.div`
-    justify-content: center;
-    align-items: center;
     background: #fff;
     border-radius: 20px;
     margin: 10px 40px;
     padding: 20px;
-    height: 520px;
+    height: 75vh;//520px;
     box-shadow: 5px 5px 10px rgb(0,0,0,0.1);
-
+    display: flex;
+    flex-direction: column;
+    
     @media (max-width: 430px){
         height: 480px;
         margin: 5px 0;
@@ -21,6 +21,8 @@ const ProjectContainer = styled.div`
 `;
     
 const SlideTitle = styled.span`
+    display: flex;
+    justify-content: center;
     margin: 10px 0;
     font-size: ${({ theme }) => theme.fontSizes.lg};
     font-weight: 500;
@@ -33,7 +35,7 @@ const SlideTitle = styled.span`
 `;
 
 const ImgDiv = styled.div`
-    width: 90%;
+    width: 100%;
     height: 215px;
     line-height: 215px;
     overflow: hidden;
@@ -46,7 +48,6 @@ const ImgDiv = styled.div`
         vertical-align: middle;
     }
     
-    
     @media (max-width: 430px){
         height: 150px;
         line-height: 150px;
@@ -54,21 +55,12 @@ const ImgDiv = styled.div`
 `;
     
 const Desc = styled.p`
-    height: 7%;
+    //height: 7%;
     font-size: ${({ theme }) => theme.fontSizes.xs};
     
     @media (max-width: 430px){
         height: 10%;
         font-size: ${({ theme }) => theme.fontSizes.xxs};
-    }
-`;
-
-
-const FeatItem = styled.div`
-    display: flex;
-
-    span {
-        margin-right: 5px;
     }
 `;
 
@@ -97,6 +89,11 @@ const GitLink = styled.div`
     display: flex;
 `;
 
+const BottomDiv = styled.div`
+    margin-top: auto;
+    flex: 0 0 auto;
+`;
+
 const Bottoms = styled.div`
     display: flex;
     font-size: ${({ theme }) => theme.fontSizes.xs};
@@ -113,6 +110,11 @@ const Dates = styled.div`
     margin-left:auto;
 `;
 
+const FeaturesDiv = styled.div`
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+`;
 
 const FeaturesList = styled.ul`
     line-height: 1.6;
@@ -128,8 +130,12 @@ const FeaturesList = styled.ul`
     }
 `;
 
-const FeaturesDiv = styled.div`
-    text-align: left;
+const FeatItem = styled.li`
+    display: flex;
+
+    span {
+        margin-right: 5px;
+    }
 `;
 
 const FeaturesButton = styled.button`
@@ -138,6 +144,8 @@ const FeaturesButton = styled.button`
     border: transparent;
     text-align: left;
     font-weight: 700;
+    margin-top: auto;
+    flex: 0 0 auto;
     
     &:hover{
         cursor: pointer;
@@ -148,8 +156,23 @@ const FeaturesButton = styled.button`
 
 export const SlideItem:React.FC<ProjectProps> = ( {title, sub, imgs, type, startDate, endDate, roles, features, skills, desc, git} ) => {
     const [showAll, setShowAll] = useState(false);
+    const [limit, setLimit] = useState(5);
+
+    useEffect(() => {
+        const handleResize = () => {
+          if (window.innerWidth <= 768) {
+            setLimit(2); // mobile
+          } else {
+            setLimit(5); // PC
+          }
+        };
     
-    const displayedFeatures = showAll ? features : features.slice(0, 4);
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+      }, []);
+
+    const displayedFeatures = showAll ? features : features.slice(0, limit);
 
     return (
         <ProjectContainer>
@@ -162,40 +185,41 @@ export const SlideItem:React.FC<ProjectProps> = ( {title, sub, imgs, type, start
                 <FeaturesList>
                     { displayedFeatures.map( (feat, index) => 
                         feat ? (
-                            <FeatItem>
-                                <span>✔️ </span>
-                                <li>{ feat }</li>
+                            <FeatItem key={index}>
+                                <span>✔️ </span> {feat}
                             </FeatItem>
                         ) : null
                     )}    
                 </FeaturesList>
-
-                {features.length > 5 && (
+                {features.length > limit && (
                     <FeaturesButton onClick={() => setShowAll(!showAll)}>
-                    {showAll ? '▲' : `+ ${features.length - 5} more`}
+                    {showAll ? '▲' : `+ ${features.length - limit} more`}
                     </FeaturesButton>
                 )}
             </FeaturesDiv>
-            <Bottoms>
-                <Roles>
-                    👩🏻‍💻 { roles.map((role) =>
-                        role ? (
-                            <RoleItem>{ role }</RoleItem>
+
+            <BottomDiv>
+                <Bottoms>
+                    <Roles>
+                        👩🏻‍💻 { roles.map((role) =>
+                            role ? (
+                                <RoleItem>{ role }</RoleItem>
+                            ) : null
+                        )}
+                    </Roles>
+                    <GitLink>
+                    { git.map( url => 
+                        url ? (
+                        <IconLink href={ url } src="/img/github-logo.svg"></IconLink>
                         ) : null
                     )}
-                </Roles>
-                <GitLink>
-                { git.map( url => 
-                    url ? (
-                    <IconLink href={ url } src="/img/github-logo.svg"></IconLink>
-                    ) : null
-                )}
-                </GitLink>
-            </Bottoms>
-            <Bottoms>
-                <Types>{ type }</Types>
-                <Dates>{startDate} ~ {endDate}</Dates>
-            </Bottoms>
+                    </GitLink>
+                </Bottoms>
+                <Bottoms>
+                    <Types>{ type }</Types>
+                    <Dates>{startDate} ~ {endDate}</Dates>
+                </Bottoms>
+            </BottomDiv>
         </ProjectContainer>
     );
 }
