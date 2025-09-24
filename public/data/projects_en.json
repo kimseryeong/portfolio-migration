@@ -2,7 +2,7 @@
     {
         "title": "Schedule Management Web Application",
         "sub": "A calendar based TodoList Web that allows user to add, edit, and delete their personal schedules",
-        "imgs": ["/img/todolist.png"],
+        "imgs": ["/img/planmytodo1.png", "/img/planmytodo2.png"],
         "type": "Solo",
         "startDate": "24.05.04",
         "endDate": "25.05.14",
