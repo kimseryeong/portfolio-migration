@@ -186,7 +186,7 @@ export const About:React.FC = () => {
                 <MimoIcon src="/img/mainImg.png" alt="MyMimoticon"/>
                 <ContactIcon>
                     <IconLink href="https://github.com/kimseryeong" src="/img/github-logo.svg"></IconLink>
-                    <IconLink href="mailto:kxxoo322@gmail.com" src="/img/mail-logo.svg"></IconLink>
+                    <IconLink href="mailto:co.seryeong@gmail.com" src="/img/mail-logo.svg"></IconLink>
                 </ContactIcon>
             </ImgDiv>
         </AboutContainer>
